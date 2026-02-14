@@ -1,6 +1,13 @@
 import React from 'react';
 
 const Services = () => {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="services" className="py-20 bg-slate-50 min-h-screen flex items-center font-serif">
       <div className="container mx-auto px-6 max-w-7xl">
@@ -58,23 +65,15 @@ const Services = () => {
               <div className="w-12 h-[1px] bg-blue-300 transition-all group-hover:w-24"></div>
             </div>
 
-            {/* Service Item 2 (Content repeated for UI balance like the template) */}
-            <div className="group">
-              <h3 className="text-xl font-bold text-blue-900 mb-2 uppercase tracking-wide">
-                Strategic Hosting
-              </h3>
-              <p className="text-blue-900/70 text-sm leading-relaxed mb-4">
-                Maximize your property potential with our data-driven management and guest experience optimization.
-              </p>
-              <div className="w-12 h-[1px] bg-blue-300 transition-all group-hover:w-24"></div>
-            </div>
-
             {/* CTA Buttons */}
             <div className="flex flex-col gap-4 pt-6">
-              <button className="bg-blue-900 text-white px-8 py-3 rounded-sm hover:bg-blue-800 transition-all uppercase text-xs tracking-widest font-sans">
+              <a href="https://www.airbnb.co.in/s/homes" target="_blank" rel="noopener noreferrer" className="bg-blue-900 text-white px-8 py-3 rounded-sm hover:bg-blue-800 transition-all uppercase text-xs tracking-widest font-sans inline-block text-center">
                 Learn More
-              </button>
-              <button className="border border-blue-900 text-blue-900 px-8 py-3 rounded-sm hover:bg-white transition-all uppercase text-xs tracking-widest font-sans">
+              </a>
+              <button 
+                onClick={() => scrollToSection('contact')}
+                className="border border-blue-900 text-blue-900 px-8 py-3 rounded-sm hover:bg-white transition-all uppercase text-xs tracking-widest font-sans"
+              >
                 Contact
               </button>
             </div>

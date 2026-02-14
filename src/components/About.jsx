@@ -1,16 +1,19 @@
 import React from 'react';
 
 const About = () => {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="about" className="py-20 bg-blue-100 font-sans">
       <div className="container mx-auto px-6 max-w-6xl">
         
         {/* Top Header Section - Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12 border-t border-blue-300 pt-8 relative">
-            {/* Template/Year indicator like the top-right of your image */}
-            <span className="absolute top-2 right-0 text-xs font-mono text-blue-900 uppercase tracking-widest">
-                Est. 2012 / Sierra BnB
-            </span>
 
           {/* Left: Large Title */}
           <div className="md:col-span-4">
@@ -36,7 +39,10 @@ const About = () => {
               We look for business opportunities and partnerships to help others create cash flow 
               so the average investor can have more free time.
             </p>
-            <button className="mt-6 border-b border-blue-900 text-blue-900 font-bold text-sm pb-1 hover:text-blue-300 hover:border-blue-300 transition-all">
+            <button 
+              onClick={() => scrollToSection('contact')}
+              className="mt-6 border-b border-blue-900 text-blue-900 font-bold text-sm pb-1 hover:text-blue-300 hover:border-blue-300 transition-all"
+            >
                 CONTACT US
             </button>
           </div>

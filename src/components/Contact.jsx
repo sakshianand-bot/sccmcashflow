@@ -18,16 +18,14 @@ const Contact = () => {
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
-  const CardWrapper = ({ children, title, image, compact }) => (
+  const CardWrapper = ({ children, title, compact }) => (
     <div className="relative group">
       {/* Delicate Arched Line */}
       <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-[90%] h-20 border-t border-x border-slate-300 rounded-t-[160px] opacity-60 group-hover:opacity-100 transition-opacity duration-700"></div>
       
-      <div className={`bg-white/80 backdrop-blur-sm border border-slate-100 text-slate-800 rounded-t-[160px] rounded-b-2xl flex flex-col items-center shadow-[0_20px_50px_rgba(0,0,0,0.05)] transition-all duration-500 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] hover:-translate-y-1 ${compact ? 'p-6 pt-12 min-h-[420px]' : 'p-8 pt-16 min-h-[580px]'}`}>
-        {/* The Circular Image Inset with Soft Glow */}
-        <div className={`rounded-full border-[1px] border-slate-200 overflow-hidden shadow-inner p-1 bg-white ${compact ? 'w-28 h-28 mb-8' : 'w-36 h-36 mb-10'}`}>
-          <img src={image} alt={title} className="w-full h-full object-cover rounded-full grayscale-[20%] group-hover:grayscale-0 transition-all duration-700" />
-        </div>
+      <div className={`bg-white/80 backdrop-blur-sm border border-slate-100 text-slate-800 rounded-t-[160px] rounded-b-2xl flex flex-col items-center shadow-[0_20px_50px_rgba(0,0,0,0.05)] transition-all duration-500 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] hover:-translate-y-1 ${compact ? 'p-6 pt-8 min-h-[420px]' : 'p-8 pt-12 min-h-[580px]'}`}>
+        {/* Blue Dot in place of image */}
+        <div className={`w-16 h-16 bg-blue-900 rounded-full ${compact ? 'mb-8' : 'mb-10'} shadow-lg`}></div>
         
         <h3 className="font-serif text-lg mb-6 tracking-[0.3em] uppercase text-slate-900">{title}</h3>
         <div className="w-full text-center font-sans text-sm text-slate-500 leading-relaxed flex-grow">
@@ -38,25 +36,24 @@ const Contact = () => {
   );
 
   return (
-    <section id="contact" className="py-24 bg-[#f8f9fa] min-h-screen relative overflow-hidden text-slate-800">
+    <section id="contact" className="py-12 bg-[#f8f9fa] relative overflow-hidden text-slate-800">
       {/* Background Decorative Elements */}
       <div className="absolute top-[-10%] right-[-5%] w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50"></div>
       <div className="absolute bottom-[-10%] left-[-5%] w-96 h-96 bg-slate-100 rounded-full blur-3xl opacity-50"></div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <header className="text-center mb-24">
+        <header className="text-center">
           <span className="text-[10px] tracking-[0.5em] uppercase text-slate-400 mb-4 block">Connect With Us</span>
           <h2 className="text-4xl md:text-5xl font-light text-slate-900 tracking-[0.15em] mb-6 font-serif">SIERRA BNB ACADEMY</h2>
-          <div className="h-[1px] w-12 bg-slate-300 mx-auto"></div>
+          <div className="h-[1px] w-12 bg-slate-300 mx-auto mb-12"></div>
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12 max-w-6xl mx-auto">
           
           {/* COLUMN 1: Contact Info */}
-          <div className="mt-48">
+          <div className="mt-12">
             <CardWrapper 
               title="Inquiries" 
-              image="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&q=80&w=500"
               compact
             >
               <div className="space-y-8 mt-4">
@@ -75,7 +72,6 @@ const Contact = () => {
           {/* COLUMN 2: The Form */}
           <CardWrapper 
             title="Correspondence" 
-            image="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=500"
           >
             <form onSubmit={handleSubmit} className="space-y-5 mt-2 px-2">
               <input
@@ -114,10 +110,9 @@ const Contact = () => {
           </CardWrapper>
 
           {/* COLUMN 3: Socials */}
-          <div className="mt-48">
+          <div className="mt-12">
             <CardWrapper 
               title="Social Presence" 
-              image="https://images.unsplash.com/photo-1520333789090-1afc82db536a?auto=format&fit=crop&q=80&w=500"
               compact
             >
               <div className="flex justify-center gap-10 mt-10">
