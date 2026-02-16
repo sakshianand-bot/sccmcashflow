@@ -3,7 +3,7 @@ const Footer = () => {
     <footer className="mt-24 bg-blue-900 py-16">
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="flex items-center gap-4">
-          <img src="/BNB-removebg-preview.png" alt="Sierra BNB Academy" className="h-12 w-12" />
+          <img src="/BNB-removebg-preview.png" alt="Sierra BNB Academy" className="h-24 w-auto object-contain" />
           <span className="text-white font-serif text-lg tracking-wider">SIERRA BNB ACADEMY</span>
         </div>
         <p className="text-blue-200 font-light tracking-[0.2em] text-xs uppercase">&copy; 2026 All Rights Reserved</p>

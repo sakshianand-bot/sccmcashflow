@@ -43,7 +43,7 @@ const Services = () => {
                {/* Main Image Container */}
                <div className="relative h-full w-full overflow-hidden rounded-t-[150px] rounded-b-[20px] shadow-2xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800" 
+                  src="/bilderboken-rlwE8f8anOc-unsplash.webp" 
                   alt="Luxury Rental" 
                   className="w-full h-full object-cover"
                 />

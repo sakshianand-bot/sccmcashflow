@@ -51,7 +51,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12 max-w-6xl mx-auto">
           
           {/* COLUMN 1: Contact Info */}
-          <div className="mt-12">
+          <div className="mt-48">
             <CardWrapper 
               title="Inquiries" 
               compact
@@ -110,7 +110,7 @@ const Contact = () => {
           </CardWrapper>
 
           {/* COLUMN 3: Socials */}
-          <div className="mt-12">
+          <div className="mt-48">
             <CardWrapper 
               title="Social Presence" 
               compact

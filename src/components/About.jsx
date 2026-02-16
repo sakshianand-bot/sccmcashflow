@@ -54,7 +54,7 @@ const About = () => {
           {/* Left Image (Square/Rectangle) */}
           <div className="md:col-span-4 h-64 md:h-80">
             <img 
-              src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&q=80&w=800" 
+              src="/francesca-tosolini-tHkJAMcO3QE-unsplash.webp" 
               alt="Luxury Interior" 
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
             />
@@ -63,7 +63,7 @@ const About = () => {
           {/* Middle Image (Rounded Design like reference) */}
           <div className="md:col-span-4 h-64 md:h-80">
             <img 
-              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800" 
+              src="/frames-for-your-heart-2d4lAQAlbDA-unsplash (1).webp" 
               alt="Bnb Property" 
               className="w-full h-full object-cover rounded-tr-[100px] rounded-bl-[20px]" 
             />

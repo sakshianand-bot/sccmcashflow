@@ -26,8 +26,8 @@ const Hero = () => {
           <div className="relative w-full md:w-5/12">
             <div className="aspect-[4/5] overflow-hidden rounded-t-full bg-blue-100 border border-blue-100 shadow-sm">
               <img 
-                src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&q=80&w=800" 
-                alt="Elegant Rental Interior" 
+                src="/todd-kent-178j8tJrNlc-unsplash.webp" 
+                alt="Sierra BNB Academy" 
                 className="w-full h-full object-cover grayscale-[20%] hover:scale-105 transition-transform duration-1000"
               />
             </div>
