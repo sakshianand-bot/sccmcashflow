@@ -19,21 +19,26 @@ const CardWrapper = ({ children, title, compact }) => (
 );
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
+  const [result, setResult] = useState("");
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      setResult("Error");
+    }
   };
 
   return (
@@ -69,28 +74,23 @@ const Contact = () => {
 
           {/* COLUMN 2: The Form (Now works perfectly) */}
           <CardWrapper title="Correspondence">
-            <form onSubmit={handleSubmit} className="space-y-5 mt-2 px-2">
+            <form onSubmit={onSubmit} className="space-y-5 mt-2 px-2">
               <input
+                type="text"
                 name="name"
-                value={formData.name}
-                onChange={handleChange}
                 placeholder="Full Name"
                 className="w-full bg-transparent border-b border-slate-200 py-2 focus:border-slate-900 outline-none text-xs transition-all placeholder:text-slate-300 placeholder:uppercase"
                 required
               />
               <input
-                name="email"
                 type="email"
-                value={formData.email}
-                onChange={handleChange}
+                name="email"
                 placeholder="Email Address"
                 className="w-full bg-transparent border-b border-slate-200 py-2 focus:border-slate-900 outline-none text-xs transition-all placeholder:text-slate-300 placeholder:uppercase"
                 required
               />
               <textarea
                 name="message"
-                value={formData.message}
-                onChange={handleChange}
                 placeholder="Message"
                 rows="3"
                 className="w-full bg-transparent border-b border-slate-200 py-2 focus:border-slate-900 outline-none text-xs transition-all resize-none placeholder:text-slate-300 placeholder:uppercase"
@@ -102,6 +102,11 @@ const Contact = () => {
               >
                 Send Message
               </button>
+              {result && (
+                <p className={`text-center text-[10px] tracking-widest uppercase ${result.includes('Success') ? 'text-green-600' : result.includes('Sending') ? 'text-slate-500' : 'text-red-500'}`}>
+                  {result}
+                </p>
+              )}
             </form>
           </CardWrapper>
 
